@@ -306,6 +306,15 @@ export const Commands = [
         category: CommandCategories.messages,
     }),
     new Command({
+        command: "translate",
+        args: "[<lang>,<message>]",
+        description: _td("Sends a message as html, without interpreting it as markdown"),
+        runFn: function (cli, roomId,args) {
+            console.log('hello');
+        },
+        category: CommandCategories.messages,
+    }),
+    new Command({
         command: "upgraderoom",
         args: "<new_version>",
         description: _td("Upgrades a room to a new version"),

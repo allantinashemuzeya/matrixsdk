@@ -41,6 +41,7 @@ import { copyPlaintext, getSelectedText } from "../../../utils/strings";
 import ContextMenu, { toRightOf, MenuProps } from "../../structures/ContextMenu";
 import ReactionPicker from "../emojipicker/ReactionPicker";
 import ViewSource from "../../structures/ViewSource";
+import TranslateMessage from "../../structures/TranslateMessage";
 import { createRedactEventDialog } from "../dialogs/ConfirmRedactDialog";
 import ShareDialog from "../dialogs/ShareDialog";
 import RoomContext, { TimelineRenderingType } from "../../../contexts/RoomContext";
@@ -233,6 +234,17 @@ export default class MessageContextMenu extends React.Component<IProps, IState> 
         );
         this.closeMenu();
     };
+
+    private onTranslateMessage = (): void => {
+        Modal.createDialog(
+           TranslateMessage,
+            {
+                mxEvent: this.props.mxEvent,
+            },
+            "mx_Dialog_viewsource",
+        );
+        this.closeMenu();
+    }
 
     private onRedactClick = (): void => {
         const { mxEvent, onCloseDialog } = this.props;
@@ -477,6 +489,14 @@ export default class MessageContextMenu extends React.Component<IProps, IState> 
             />
         );
 
+        const translateMessage  = (
+            <IconizedContextMenuOption
+                iconClassName={"mx_LanguageIcon"}
+                label={_t("Translate Message")}
+                onClick={this.onTranslateMessage}
+            />
+        );
+
         let unhidePreviewButton: JSX.Element | undefined;
         if (eventTileOps?.isWidgetHidden()) {
             unhidePreviewButton = (
@@ -713,6 +733,7 @@ export default class MessageContextMenu extends React.Component<IProps, IState> 
                 {jumpToRelatedEventButton}
                 {unhidePreviewButton}
                 {viewSourceButton}
+                {translateMessage}
                 {resendReactionsButton}
                 {collapseReplyChainButton}
             </IconizedContextMenuOptionList>

@@ -449,5 +449,20 @@
     "User Busy": "User Busy",
     "%(seconds)ss left": "%(seconds)ss left",
     "%(minutes)sm %(seconds)ss left": "%(minutes)sm %(seconds)ss left",
-    "%(hours)sh %(minutes)sm %(seconds)ss left": "%(hours)sh %(minutes)sm %(seconds)ss left"
+    "%(hours)sh %(minutes)sm %(seconds)ss left": "%(hours)sh %(minutes)sm %(seconds)ss left",
+    "English": "English",
+    "Français": "French",
+    "Deutsch": "German",
+    "Spanish": "Spanish",
+    "Italian": "Italian",
+    "Dutch": "Dutch",
+    "Portuguese": "Portuguese",
+    "Russian": "Russian",
+    "Japanese": "Japanese",
+    "Chinese": "Chinese",
+    "Korean": "Korean",
+    "Gofast Message Translator": "Gofast Message Translator",
+    "Choose a target language": "Choose a target language",
+    "Select a language": "Select a language",
+    "Translate Message": "Translate Message"
 }
